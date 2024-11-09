@@ -26,7 +26,7 @@ public class UserController {
     }
 
     @GetMapping("/filter")
-    public List<User> filteredByPhone(@RequestParam("filterBy") UserFilter filterBy,
+    public List<User> filteredUser(@RequestParam("filterBy") UserFilter filterBy,
                                                     @RequestParam("operator") Operator operator,
                                                     @RequestParam("value") String value
                                                     ) {
