@@ -1,5 +1,6 @@
 package org.gfg.JBDL_76_Minor1.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,18 +12,22 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 @Entity
+@IdClass(AuthorCompositeKey.class)
+@Builder
 public class Author extends TimeStamps{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private String id;
+
+    @Id
+    @Column(nullable = false, unique = true, length =50)
+    private String email;
 
     @Column(length = 50)
     private String name;
 
-    @Column(nullable = false, unique = true, length =50)
-    private String email;
-
-    @OneToMany(mappedBy = "author")
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
     private List<Book> bookList;
 }
+// i want to make a composite key here
+// JsonIgnore : it is going to be ignored from my json resposne

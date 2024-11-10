@@ -1,8 +1,7 @@
-package org.gfg.JBDL_76_Minor1.service;
+package org.gfg.JBDL_76_Minor1.service.impl;
 
 import org.gfg.JBDL_76_Minor1.dto.UserCreationRequest;
 import org.gfg.JBDL_76_Minor1.dto.UserCreationResponse;
-import org.gfg.JBDL_76_Minor1.dto.UserFilterResponse;
 import org.gfg.JBDL_76_Minor1.enums.Operator;
 import org.gfg.JBDL_76_Minor1.enums.UserFilter;
 import org.gfg.JBDL_76_Minor1.model.User;
@@ -44,6 +43,10 @@ public class UserService {
                 }
         }
         return new ArrayList<>();
+    }
+
+    public User checkIfUserIsValid(String userEmail) {
+        return userRepository.findByEmail(userEmail);
     }
 }
 // some methods are actually there, u can directly call from ur service

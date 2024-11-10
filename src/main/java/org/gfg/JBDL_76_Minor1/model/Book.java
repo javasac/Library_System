@@ -1,5 +1,7 @@
 package org.gfg.JBDL_76_Minor1.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 import org.gfg.JBDL_76_Minor1.enums.BookType;
@@ -35,8 +37,12 @@ public class Book extends TimeStamps{
     @JoinColumn
     private User user;
 
-    @ManyToOne
-    @JoinColumn
+    @ManyToOne(cascade= CascadeType.ALL)
+    @JoinColumns({
+            @JoinColumn(name = "author_id", referencedColumnName = "id"),
+            @JoinColumn(name = "author_email", referencedColumnName = "email")
+    })
+    @JsonIgnoreProperties(value = "bookList")
     private Author author;
 
     @OneToMany(mappedBy = "book")

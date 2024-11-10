@@ -2,11 +2,10 @@ package org.gfg.JBDL_76_Minor1.controller;
 
 import org.gfg.JBDL_76_Minor1.dto.UserCreationRequest;
 import org.gfg.JBDL_76_Minor1.dto.UserCreationResponse;
-import org.gfg.JBDL_76_Minor1.dto.UserFilterResponse;
 import org.gfg.JBDL_76_Minor1.enums.Operator;
 import org.gfg.JBDL_76_Minor1.enums.UserFilter;
 import org.gfg.JBDL_76_Minor1.model.User;
-import org.gfg.JBDL_76_Minor1.service.UserService;
+import org.gfg.JBDL_76_Minor1.service.impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
