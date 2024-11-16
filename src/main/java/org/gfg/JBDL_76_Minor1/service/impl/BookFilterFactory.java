@@ -1,9 +1,7 @@
-package org.gfg.JBDL_76_Minor1.service;
+package org.gfg.JBDL_76_Minor1.service.impl;
 
 import org.gfg.JBDL_76_Minor1.enums.BookFilter;
-import org.gfg.JBDL_76_Minor1.service.impl.BookNoFilterImpl;
-import org.gfg.JBDL_76_Minor1.service.impl.BookTitleFilterImpl;
-import org.gfg.JBDL_76_Minor1.service.impl.BookTypeFilterImpl;
+import org.gfg.JBDL_76_Minor1.service.BookFilterStratergy;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

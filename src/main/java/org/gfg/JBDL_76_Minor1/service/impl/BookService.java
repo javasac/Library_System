@@ -2,19 +2,16 @@ package org.gfg.JBDL_76_Minor1.service.impl;
 
 import org.gfg.JBDL_76_Minor1.dto.BookCreationRequest;
 import org.gfg.JBDL_76_Minor1.dto.BookCreationResponse;
-import org.gfg.JBDL_76_Minor1.dto.BookFilterResponse;
 import org.gfg.JBDL_76_Minor1.enums.BookFilter;
 import org.gfg.JBDL_76_Minor1.enums.Operator;
 import org.gfg.JBDL_76_Minor1.model.Author;
 import org.gfg.JBDL_76_Minor1.model.Book;
 import org.gfg.JBDL_76_Minor1.model.User;
 import org.gfg.JBDL_76_Minor1.repository.BookRepository;
-import org.gfg.JBDL_76_Minor1.service.BookFilterFactory;
 import org.gfg.JBDL_76_Minor1.service.BookFilterStratergy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 

@@ -4,13 +4,11 @@ import org.gfg.JBDL_76_Minor1.dto.BookFilterResponse;
 import org.gfg.JBDL_76_Minor1.enums.Operator;
 import org.gfg.JBDL_76_Minor1.model.Book;
 import org.gfg.JBDL_76_Minor1.repository.BookRepository;
-import org.gfg.JBDL_76_Minor1.service.BookFilterFactory;
 import org.gfg.JBDL_76_Minor1.service.BookFilterStratergy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 public class BookNoFilterImpl implements BookFilterStratergy {
