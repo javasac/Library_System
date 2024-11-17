@@ -11,9 +11,9 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Entity
 @Builder
+@Table(name = "\"USER\"")
 public class User extends TimeStamps{
 
     @Id

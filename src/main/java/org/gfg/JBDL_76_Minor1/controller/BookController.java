@@ -21,15 +21,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/book")
-@Validated
 public class BookController {
 
     @Autowired
     private BookService bookService;
-    private static final Logger LOGGER = LoggerFactory.getLogger(BookController.class);
 
     @PostMapping("/addBook")
-    public ResponseEntity<GenericReturnClass> addStudent(@RequestBody BookCreationRequest request){
+    public ResponseEntity<GenericReturnClass> addBook(@RequestBody @Validated BookCreationRequest request){
         BookCreationResponse response = bookService.addBook(request);
         GenericReturnClass returnObject = GenericReturnClass.builder().data(response).build();
         if(response != null){

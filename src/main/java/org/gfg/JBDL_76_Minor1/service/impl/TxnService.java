@@ -73,6 +73,7 @@ public class TxnService {
         bookService.markBookUnavailable(bookFromDb, userFromDb);
         return txnId;
     }
+
     @Transactional(rollbackFor = {BookException.class, UserException.class})
     public Double returnTxn(TxnReturnRequest txnReturnRequest) throws UserException, BookException {
         // user is valid or not
@@ -106,7 +107,7 @@ public class TxnService {
         }
     }
 
-    private Double calculateSettlementAmount(Txn txnFromDb, Book bookFromDb) {
+    public Double calculateSettlementAmount(Txn txnFromDb, Book bookFromDb) {
         long issueTime = txnFromDb.getIssuedDate().getTime();
         long returnTime = System.currentTimeMillis();
         long diff = returnTime-issueTime;
