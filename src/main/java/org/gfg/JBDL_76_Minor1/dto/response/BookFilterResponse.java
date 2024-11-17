@@ -1,6 +1,5 @@
-package org.gfg.JBDL_76_Minor1.dto;
+package org.gfg.JBDL_76_Minor1.dto.response;
 
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 import org.gfg.JBDL_76_Minor1.enums.BookType;
 

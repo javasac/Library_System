@@ -1,6 +1,5 @@
 package org.gfg.JBDL_76_Minor1.service.impl;
 
-import org.gfg.JBDL_76_Minor1.dto.BookFilterResponse;
 import org.gfg.JBDL_76_Minor1.enums.Operator;
 import org.gfg.JBDL_76_Minor1.model.Book;
 import org.gfg.JBDL_76_Minor1.service.BookFilterStratergy;

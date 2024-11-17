@@ -1,7 +1,7 @@
 package org.gfg.JBDL_76_Minor1.controller;
 
-import org.gfg.JBDL_76_Minor1.dto.UserCreationRequest;
-import org.gfg.JBDL_76_Minor1.dto.UserCreationResponse;
+import org.gfg.JBDL_76_Minor1.dto.request.UserCreationRequest;
+import org.gfg.JBDL_76_Minor1.dto.response.UserCreationResponse;
 import org.gfg.JBDL_76_Minor1.enums.Operator;
 import org.gfg.JBDL_76_Minor1.enums.UserFilter;
 import org.gfg.JBDL_76_Minor1.model.User;

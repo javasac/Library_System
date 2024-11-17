@@ -1,7 +1,7 @@
 package org.gfg.JBDL_76_Minor1.service.impl;
 
-import org.gfg.JBDL_76_Minor1.dto.BookCreationRequest;
-import org.gfg.JBDL_76_Minor1.dto.BookCreationResponse;
+import org.gfg.JBDL_76_Minor1.dto.request.BookCreationRequest;
+import org.gfg.JBDL_76_Minor1.dto.response.BookCreationResponse;
 import org.gfg.JBDL_76_Minor1.enums.BookFilter;
 import org.gfg.JBDL_76_Minor1.enums.Operator;
 import org.gfg.JBDL_76_Minor1.model.Author;
@@ -51,6 +51,7 @@ public class BookService {
                 builder().
                 bookName(book.getTitle()).
                 bookNo(book.getBookNo()).
+                securityAmount(book.getSecurityAmount()).
                 build();
     }
     //2 entities which are related to each other, manytoone relationship

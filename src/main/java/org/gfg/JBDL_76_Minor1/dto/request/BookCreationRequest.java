@@ -1,4 +1,4 @@
-package org.gfg.JBDL_76_Minor1.dto;
+package org.gfg.JBDL_76_Minor1.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

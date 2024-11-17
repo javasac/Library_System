@@ -2,15 +2,18 @@ package org.gfg.JBDL_76_Minor1.controller;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import org.gfg.JBDL_76_Minor1.dto.BookCreationRequest;
-import org.gfg.JBDL_76_Minor1.dto.BookCreationResponse;
-import org.gfg.JBDL_76_Minor1.dto.BookFilterResponse;
+import org.gfg.JBDL_76_Minor1.dto.GenericReturnClass;
+import org.gfg.JBDL_76_Minor1.dto.request.BookCreationRequest;
+import org.gfg.JBDL_76_Minor1.dto.response.BookCreationResponse;
 import org.gfg.JBDL_76_Minor1.enums.BookFilter;
 import org.gfg.JBDL_76_Minor1.enums.Operator;
 import org.gfg.JBDL_76_Minor1.model.Book;
-import org.gfg.JBDL_76_Minor1.model.User;
 import org.gfg.JBDL_76_Minor1.service.impl.BookService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,10 +26,20 @@ public class BookController {
 
     @Autowired
     private BookService bookService;
+    private static final Logger LOGGER = LoggerFactory.getLogger(BookController.class);
 
     @PostMapping("/addBook")
-    public BookCreationResponse addStudent(@RequestBody BookCreationRequest request){
-        return bookService.addBook(request);
+    public ResponseEntity<GenericReturnClass> addStudent(@RequestBody BookCreationRequest request){
+        BookCreationResponse response = bookService.addBook(request);
+        GenericReturnClass returnObject = GenericReturnClass.builder().data(response).build();
+        if(response != null){
+            returnObject.setCode(0);
+            returnObject.setMsg("Its successful");
+        }else{
+            returnObject.setCode(1);
+            returnObject.setMsg("Its failed");
+        }
+        return new ResponseEntity<>(returnObject, HttpStatus.OK);
     }
 
 
