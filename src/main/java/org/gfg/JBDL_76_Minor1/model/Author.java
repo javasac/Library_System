@@ -9,7 +9,6 @@ import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Entity
 @IdClass(AuthorCompositeKey.class)
 @Builder
