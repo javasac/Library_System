@@ -14,7 +14,7 @@ public class ServiceParamPrinter {
     private static final Logger log = LoggerFactory.getLogger(ServiceParamPrinter.class);
 
 
-    @Pointcut("execution(* org.gfg.JBDL_76_Minor1.service.impl.TxnService.create(org.gfg.JBDL_76_Minor1.dto.request.TxnRequest))")
+    @Pointcut("execution(* org.sachin.Library_System.service.impl.TxnService.create(org.gfg.JBDL_76_Minor1.dto.request.TxnRequest))")
     public void txnServiceCreateMethod(){}
 
     @Before(value = "txnServiceCreateMethod() && args(txnRequest)")

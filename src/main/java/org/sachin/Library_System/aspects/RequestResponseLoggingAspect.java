@@ -13,28 +13,31 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 @Component
 public class RequestResponseLoggingAspect {
     private static final Logger log = LoggerFactory.getLogger(RequestResponseLoggingAspect.class);
-    @Pointcut("execution(* org.gfg.JBDL_76_Minor1.controller..*(..))")
+    @Pointcut("execution(* org.sachin.Library_System.controller..*(..))")
     public void controllerMethods(){}
 
     @Before("controllerMethods()")
-//    @Before("execute(* org.gfg.JBDL_76_Minor1.controller..*(..))")
-    public void logRequest(){
+    public void logRequest()
+    {
        HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
         log.info("Request : " +request.getMethod() +" "+ request.getRequestURI());
         log.info("Request Headers");
         request.getHeaderNames().asIterator().forEachRemaining(header-> log.info(header+ ":" + request.getHeader(header)));
     }
-//    @AfterReturning(pointcut = "execute(* org.gfg.JBDL_76_Minor1.controller..*(..))", returning = "response")
+
     @AfterReturning(value = "controllerMethods()", returning = "response")
-    public void logResponse(Object response){
-        if(response instanceof HttpServletResponse){
+    public void logResponse(Object response)
+    {
+        if (response instanceof HttpServletResponse)
+        {
             HttpServletResponse response1 = (HttpServletResponse)  response;
             log.info("respose status" + response1.getStatus());
-        }else{
+        }
+        else
+        {
             log.info("Response :" + response.toString());
         }
     }
-
 }
 
 
