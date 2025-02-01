@@ -8,11 +8,11 @@
 		<version>3.3.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>org.gfg</groupId>
-	<artifactId>JBDL-76-Minor1</artifactId>
+	<groupId>org.sachin</groupId>
+	<artifactId>Library_System</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>JBDL-76-Minor1</name>
-	<description>JBDL-76-Minor1</description>
+	<name>Library_System</name>
+	<description>Library_System</description>
 	<url/>
 	<licenses>
 		<license/>
